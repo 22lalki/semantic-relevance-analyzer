@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-core: #22c55e;
+  --color-adjacent: #eab308;
+  --color-noise: #ef4444;
+  --color-query: #3b82f6;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #05070e;
+  background-image:
+    radial-gradient(60rem 40rem at 15% -10%, rgba(99, 102, 241, 0.16), transparent 60%),
+    radial-gradient(50rem 35rem at 100% 0%, rgba(217, 70, 239, 0.12), transparent 55%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+  font-family:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .label-caps {
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: color-mix(in oklab, #94a3b8 80%, transparent);
+  }
+
+  .panel {
+    border-radius: 1rem;
+    border: 1px solid rgba(51, 65, 85, 0.7);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(2, 6, 23, 0.85));
+    backdrop-filter: blur(6px);
+  }
+
+  .field {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 1px solid rgb(51 65 85);
+    background: rgba(2, 6, 23, 0.6);
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    outline: none;
+    transition:
+      border-color 120ms ease,
+      box-shadow 120ms ease;
+  }
+
+  .field::placeholder {
+    color: #475569;
+  }
+
+  .field:focus {
+    border-color: rgb(99 102 241);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  }
+
+  .gradient-cta {
+    background-image: linear-gradient(90deg, #4f46e5, #7c3aed 45%, #c026d3);
+    box-shadow: 0 10px 30px -12px rgba(124, 58, 237, 0.9);
+  }
+
+  .gradient-cta:hover:not(:disabled) {
+    background-image: linear-gradient(90deg, #4338ca, #6d28d9 45%, #a21caf);
+  }
+}
+
+/* scrollbars inside scrollable tables/charts */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
