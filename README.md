@@ -2,6 +2,8 @@
 
 Splits a page into retrieval passages, scores each one against a target query by vector proximity, and shows which sections would pull the page into AI search results — and which are dead weight.
 
+> **Проверяющему:** короткая шпаргалка «что где и что смотреть» — [ПРОВЕРЯЮЩЕМУ.md](%D0%9F%D0%A0%D0%9E%D0%92%D0%95%D0%A0%D0%AF%D0%AE%D0%A9%D0%95%D0%9C%D0%A3.md). Запуск: `npm install && npm run dev`, ключи не нужны.
+
 ![Semantic Relevance Analyzer](docs/screenshot.png)
 
 Three result blocks, top to bottom:
